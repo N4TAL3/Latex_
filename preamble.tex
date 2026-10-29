@@ -1,0 +1,156 @@
+% Lingua
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{microtype}
+\usepackage[normalem]{ulem}
+\usepackage{csquotes}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.5\textwidth}
+
+% Font
+\usepackage{libertinus}
+% \usepackage{mathpazo}
+% \usepackage{lmodern}
+
+% Layout
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=25mm,
+  bottom=22mm,
+  left=30mm,
+  right=30mm
+}
+
+\setlength\parindent{0pt} % no spazio quando si va a capo
+
+% Matematica
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage[makeroom]{cancel}
+\usepackage{amssymb}
+\usepackage{faktor} % per il simbolo del quoziente
+
+% Liste e figures
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{placeins}
+
+\graphicspath{ {./images/} }
+
+% Bibliografia
+\usepackage[
+  backend=biber,
+  style=alphabetic
+]{biblatex}
+
+\addbibresource{references.bib}
+
+% Hyperlinks e numerazione automatica
+\usepackage[hidelinks]{hyperref}
+\setcounter{tocdepth}{3}
+
+% Colori per i commenti e box colorati
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\colorlet{myblue}{blue!70!black}
+\colorlet{myred}{red!70!black}
+
+\newtcolorbox{highlight}{
+    enhanced,
+    colback=blue!3,
+    colupper=myblue,
+    frame hidden,
+    left=2pt,
+    right=0pt,
+    borderline west={1.5pt}{0pt}{myblue},
+}
+
+% PARAMETRI TCOLORBOX
+
+    % enhanced,                   % abilita le funzionalità grafiche avanzate
+    % breakable,                  % permette al box di andare su più pagine
+
+    % COLORI
+    % colback=red!3,              % colore dello sfondo
+    % colframe=red!75!black,    % colore del bordo normale
+    % colupper=black,           % colore del testo interno
+    % coltitle=black,           % colore del titolo
+
+    % BORDO
+    % frame hidden,               % nasconde il bordo standard
+    % borderline={0.8pt}{0pt}{red!75!black,dashed}, % spessore,distanza,colore
+    % borderline east = " " "
+    % borderline west = " " "
+    % borderline nord = " " "
+    % borderline sud = " " "
+    % boxrule=0.8pt,            % spessore del bordo standard
+
+    % ANGOLI
+    % sharp corners,            % angoli completamente quadrati
+    % rounded corners,          % angoli arrotondati
+    % arc=2mm,                  % raggio degli angoli arrotondati
+
+    % SPAZIATURA INTERNA
+    % boxsep=5pt,               % spazio interno generale
+    % left=8pt,                 % spazio interno a sinistra
+    % right=8pt,                % spazio interno a destra
+    % top=6pt,                  % spazio interno sopra
+    % bottom=6pt,               % spazio interno sotto
+
+    % SPAZIO ESTERNO
+    % before skip=10pt,         % spazio prima del box
+    % after skip=10pt,          % spazio dopo il box
+
+    % TITOLO
+    % title=Titolo,             % titolo del box
+    % fonttitle=\bfseries,      % stile del titolo
+    % coltitle=black,           % colore del titolo
+
+    % DIMENSIONI
+    % width=\textwidth,         % larghezza del box
+    % height=4cm,               % altezza del box
+
+    % ALLINEAMENTO DEL CONTENUTO
+    % halign=left,              % allineamento orizzontale (left / center / right)
+    % valign=center,            % allineamento verticale (top / center / bottom)
+
+    % EFFETTI GRAFICI
+    % drop shadow,              % aggiunge un'ombra al box
+
+
+% Alcune macro
+\newcommand{\Sym}{\text{Sym}}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\NewDocumentCommand{\ngen}{m g}{
+  \langle\!\langle #1 \rangle\!\rangle_{\IfNoValueTF{#2}{}{#2}}
+}
+\newcommand{\pres}[2]{\langle #1\mid #2 \rangle}
+\newcommand{\mylink}[1]{\href{#1}{[\textbf{link}]}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+
+%  Numerazione teoremi
+\theoremstyle{plain}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem*{teo*}{Teorema}
+\newtheorem{prop}[teo]{Proposizione}
+\newtheorem{corollario}[teo]{Corollario}
+\newtheorem*{corollario*}{Corollario}
+\newtheorem{lemma}[teo]{Lemma}
+\newtheorem{idea}[teo]{Idea}
+\newtheorem{esercizio}[teo]{Esercizio}
+\newtheorem*{eser*}{Esercizio}
+
+
+\theoremstyle{definition}
+\newtheorem{esempio}{Esempio}
+\newtheorem*{esempio*}{Esempio}
+\newtheorem{defin}[teo]{Definizione}
+\newtheorem{oss}[teo]{Osservazione}
+
+
+% Personalizzazione documento
